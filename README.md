@@ -64,6 +64,62 @@ print(A.dtype)
 위에 코드는 2X2의 A라는 행렬을 작성했습니다<br />
 행렬의 형상은 **shape** 로 행렬에 담긴 원소의 자료형은 dtype으로 알 수 있습니다.<br />
 
+## Broadcast
+넘파이에서는 형상이 다른 배열끼리도 계산이 가능합니다.<br />
+예를들어보자면 10이라는 **스칼라값**이 2X2 행렬로 연산이 가능합니다.
+~~~python
+import numpy as np
+
+A = np.array([[1, 2],[3, 4]])
+B = np.array([10, 20])
+
+print(A * B)
+~~~
+
+## 원소접근
+
+원소의 인덱스는 0부터 시작합니다. <br />
+그리고 각 원소에 접근하려면 밑에 코드처럼 작성해야합니다.<br />
+
+~~~python
+import numpy as np
+
+X = np.array([[51, 55], [14, 19], [0, 4]])
+print(X)
+~~~
+이렇게 쓰면 결과값에서 **0번째(첫번째)** 인 51,55를 출력하려면 이런 코드를 작성해야합니다.
+
+~~~python
+X = np.array([[51, 55], [14, 19], [0, 4]])
+print(X)
+
+print(X[0])
+print(X[0][1])
+~~~
+우선 코드를 해석해보자면 print문에서 첫번째는 X라는 variable에 0번째 즉 첫번째를 출력시켜달라는 뜻이구요. <br />
+그후 밑에 print문은 X라는 variabel에 0번째에서 1번을 출력해달라는데 0부터 인덱스는 시작하니 일반 숫자로 세면 2번이겠군요 <br />
+
+# 여러가지로 응용하기
+~~~python
+#for 원소 접근
+
+for row in X:
+    print(row)
+
+X = X.flatten()
+print(X)
+
+print(X[np.array([0, 2, 4])])
+
+# Boolean
+
+print(X > 15)
+print(X[X > 15])
+~~~
+
+
+
+
 
 
 
