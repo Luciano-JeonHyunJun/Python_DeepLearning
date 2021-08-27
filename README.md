@@ -3,7 +3,7 @@
 <h6>라이브러리 다운로드</h6>
 <pre>
 <code>
-pip install matplotlib < br />
+pip install matplotlib 
 <br />
 pip install numpy
 </code>
